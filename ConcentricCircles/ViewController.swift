@@ -8,6 +8,8 @@
 
 import UIKit
 
+let shortAnimationDuration = 0.2
+
 class ViewController: UIViewController {
     
     var button:UIButton = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
@@ -32,7 +34,7 @@ class ViewController: UIViewController {
     
     func buttonWasPressed () {
         
-        UIView.animateWithDuration(0.2, animations: { () -> Void in
+        UIView.animateWithDuration(shortAnimationDuration, animations: { () -> Void in
             
             let scaleTransform = CGAffineTransformMakeScale(1.0, 1.0)
             self.button.transform = scaleTransform
@@ -46,8 +48,7 @@ class ViewController: UIViewController {
     
     func shrinkButton() {
         
-        let animationDuration = 0.2
-        UIView.animateWithDuration(animationDuration, animations: { () -> Void in
+        UIView.animateWithDuration(shortAnimationDuration, animations: { () -> Void in
             
             let scaleTransform = CGAffineTransformMakeScale(0.5, 0.5)
             self.button.layer.cornerRadius = self.button.frame.height / 2
@@ -86,7 +87,4 @@ class ViewController: UIViewController {
                 })
         })
     }
-
-
 }
-
